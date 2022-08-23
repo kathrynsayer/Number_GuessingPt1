@@ -1,13 +1,20 @@
 let num = Math.floor(Math.random() * 100) + 1;
-for(let i = 1; i <= 100; i++) {
+let isPlaying = true;
+
+while (isPlaying) {
+    guess()
 }
 
-function guesscheck () {
-    let guess = window.prompt("What is my favorite number?");
-    if  (parseInt(guess) === num) {
-        console.log ('You are right!');
-        else if (guess < num)
-        console.log ('Too low! Try again!')
-        else ('Too high! Try again!')
+function guess() {
+    let input = Number.parseInt(prompt("What is my favorite number?"));
+    if (input < num) {
+        alert ('Too low! Try again!');
+    } else if (input > num) {
+        alert ('Too high! Try again!');
+    } else if (input == num) {
+        alert ('Congratulations!');
+        isPlaying = false;
+    } else { 
+        alert ("Not a valid number");
+        }
     }
-}
